@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Professional Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(34, 211, 238, 0.6);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+            transform: scale(1.05);
+        }
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .status {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .status.success {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+            color: #10b981;
+            display: block;
+        }
+        .status.error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+            display: block;
+        }
+        .status.loading {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid #3b82f6;
+            color: #3b82f6;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold mb-4">
+                    <span class="gradient-text">Download Professional Images</span>
+                </h1>
+                <p class="text-xl text-gray-300">Get professional images for your portfolio</p>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="statusMessage" class="status"></div>
+
+            <!-- Profile Image -->
+            <div class="card mb-8">
+                <h2 class="text-2xl font-bold mb-6 gradient-text">
+                    <i class="fas fa-user-circle mr-2"></i> Profile Image
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <img id="profilePreview" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Profile" class="image-preview">
+                        <p class="text-gray-400 text-sm mb-4">Professional headshot - Perfect for your portfolio</p>
+                        <button onclick="downloadProfileImage()" class="w-full px-4 py-2 btn-primary text-white rounded-lg font-semibold">
+                            <i class="fas fa-download mr-2"></i> Download Profile Image
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Details:</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✅ Size: 400x400 pixels</li>
+                            <li>✅ Format: JPG</li>
+                            <li>✅ Quality: High resolution</li>
+                            <li>✅ Location: assets/profile/profile.jpg</li>
+                            <li>✅ Professional headshot</li>
+                            <li>✅ Free from Unsplash</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Images -->
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-6 gradient-text">
+                    <i class="fas fa-images mr-2"></i> Project Images
+                </h2>
+
+                <!-- Project 1 -->
+                <div class="mb-8 pb-8 border-b border-gray-700">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Project 1: E-Commerce Platform</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <img id="project1Preview" src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80" alt="Project 1" class="image-preview">
+                            <p class="text-gray-400 text-sm mb-4">Modern e-commerce website interface</p>
+                            <button onclick="downloadProject1Image()" class="w-full px-4 py-2 btn-primary text-white rounded-lg font-semibold">
+                                <i class="fas fa-download mr-2"></i> Download Project 1
+                            </button>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Details:</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>✅ Size: 600x400 pixels</li>
+                                <li>✅ Format: JPG</li>
+                                <li>✅ Quality: High resolution</li>
+                                <li>✅ Location: assets/projects/project1.jpg</li>
+                                <li>✅ E-Commerce theme</li>
+                                <li>✅ Professional design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="mb-8 pb-8 border-b border-gray-700">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Project 2: Task Management App</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <img id="project2Preview" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Project 2" class="image-preview">
+                            <p class="text-gray-400 text-sm mb-4">Interactive task management interface</p>
+                            <button onclick="downloadProject2Image()" class="w-full px-4 py-2 btn-primary text-white rounded-lg font-semibold">
+                                <i class="fas fa-download mr-2"></i> Download Project 2
+                            </button>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Details:</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>✅ Size: 600x400 pixels</li>
+                                <li>✅ Format: JPG</li>
+                                <li>✅ Quality: High resolution</li>
+                                <li>✅ Location: assets/projects/project2.jpg</li>
+                                <li>✅ Task Management theme</li>
+                                <li>✅ Professional design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Project 3: Portfolio Website</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <img id="project3Preview" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" alt="Project 3" class="image-preview">
+                            <p class="text-gray-400 text-sm mb-4">Modern portfolio website design</p>
+                            <button onclick="downloadProject3Image()" class="w-full px-4 py-2 btn-primary text-white rounded-lg font-semibold">
+                                <i class="fas fa-download mr-2"></i> Download Project 3
+                            </button>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Details:</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>✅ Size: 600x400 pixels</li>
+                                <li>✅ Format: JPG</li>
+                                <li>✅ Quality: High resolution</li>
+                                <li>✅ Location: assets/projects/project3.jpg</li>
+                                <li>✅ Portfolio theme</li>
+                                <li>✅ Professional design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download All Button -->
+            <div class="text-center mt-8">
+                <button onclick="downloadAllImages()" class="px-8 py-3 btn-primary text-white rounded-lg font-semibold text-lg">
+                    <i class="fas fa-download mr-2"></i> Download All Images
+                </button>
+            </div>
+
+            <!-- Info -->
+            <div class="card mt-8">
+                <h3 class="text-lg font-semibold mb-4 text-cyan-400">
+                    <i class="fas fa-info-circle mr-2"></i> Information
+                </h3>
+                <ul class="text-gray-300 space-y-2">
+                    <li>✅ All images are from Unsplash (free, high quality)</li>
+                    <li>✅ Images are optimized for web</li>
+                    <li>✅ Professional and modern designs</li>
+                    <li>✅ You can replace them with your own images anytime</li>
+                    <li>✅ After download, refresh your portfolio to see the changes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const statusMessage = document.getElementById('statusMessage');
+
+        function showStatus(message, type) {
+            statusMessage.textContent = message;
+            statusMessage.className = `status ${type}`;
+            setTimeout(() => {
+                statusMessage.className = 'status';
+            }, 5000);
+        }
+
+        async function downloadImage(url, filename) {
+            try {
+                showStatus(`Downloading ${filename}...`, 'loading');
+                
+                const response = await fetch(url);
+                const blob = await response.blob();
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                showStatus(`✅ ${filename} downloaded successfully!`, 'success');
+            } catch (error) {
+                showStatus(`❌ Error downloading ${filename}: ${error.message}`, 'error');
+            }
+        }
+
+        function downloadProfileImage() {
+            downloadImage('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80', 'profile.jpg');
+        }
+
+        function downloadProject1Image() {
+            downloadImage('https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80', 'project1.jpg');
+        }
+
+        function downloadProject2Image() {
+            downloadImage('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', 'project2.jpg');
+        }
+
+        function downloadProject3Image() {
+            downloadImage('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80', 'project3.jpg');
+        }
+
+        async function downloadAllImages() {
+            showStatus('Downloading all images...', 'loading');
+            
+            const images = [
+                { url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80', name: 'profile.jpg' },
+                { url: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80', name: 'project1.jpg' },
+                { url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', name: 'project2.jpg' },
+                { url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80', name: 'project3.jpg' }
+            ];
+
+            for (const image of images) {
+                try {
+                    const response = await fetch(image.url);
+                    const blob = await response.blob();
+                    
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = image.name;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                } catch (error) {
+                    console.error(`Error downloading ${image.name}:`, error);
+                }
+            }
+            
+            showStatus('✅ All images downloaded successfully! Save them to the correct folders.', 'success');
+        }
+    </script>
+</body>
+</html>

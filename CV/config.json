@@ -1,0 +1,161 @@
+{
+  "personal": {
+    "name": "Somnath Chatterjee",
+    "title": "Full Stack Developer | IT Professional | Tech Enthusiast",
+    "description": "Dedicated and hardworking professional with a strong academic background and passion for technology and computer applications.",
+    "email": "somnathchatterjeebca1999@gmail.com",
+    "phone": "+91 7032294862",
+    "location": "Raniganj, Paschim Bardhaman, India",
+    "dob": "17/08/1999"
+  },
+  "about": {
+    "fatherName": "Partha Chatterjee",
+    "motherName": "Barnali Chatterjee",
+    "religion": "Hindu",
+    "nationality": "Indian",
+    "maritalStatus": "Unmarried",
+    "hobbies": "Cricket, Outdoor Games",
+    "languages": "English, Bengali",
+    "address": "Raniganj, Paschim Bardhaman"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/somnath",
+    "whatsapp": "https://wa.me/917032294862",
+    "instagram": "https://www.instagram.com/somnath",
+    "github": "https://github.com/somnath",
+    "linkedin": "https://www.linkedin.com/in/somnath-chatterjee-b16555288"
+  },
+  "skills": [
+    {
+      "category": "MS Office Suite",
+      "items": [
+        { "name": "MS Word", "percentage": 95 },
+        { "name": "MS Excel", "percentage": 90 },
+        { "name": "MS Access", "percentage": 85 },
+        { "name": "MS PowerPoint", "percentage": 88 }
+      ]
+    },
+    {
+      "category": "Programming & Web",
+      "items": [
+        { "name": "HTML & CSS", "percentage": 92 },
+        { "name": "JavaScript", "percentage": 85 },
+        { "name": "Tailwind CSS", "percentage": 88 },
+        { "name": "jQuery", "percentage": 80 }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "sl": "01",
+      "examName": "Madhyamik",
+      "board": "WBBSE",
+      "year": "2017",
+      "institute": "SBHS",
+      "fullMarks": "200",
+      "percentage": "88%"
+    },
+    {
+      "sl": "02",
+      "examName": "Higher Secondary",
+      "board": "WBCHSE",
+      "year": "2019",
+      "institute": "SBHSE",
+      "fullMarks": "300",
+      "percentage": "68%"
+    },
+    {
+      "sl": "03",
+      "examName": "Diploma",
+      "board": "WBSCTVE",
+      "year": "2022",
+      "institute": "SBHSE",
+      "fullMarks": "300",
+      "percentage": "78%"
+    },
+    {
+      "sl": "04",
+      "examName": "CITA",
+      "board": "YTCTC",
+      "year": "2020",
+      "institute": "YTCTC",
+      "fullMarks": "56",
+      "percentage": "45%"
+    },
+    {
+      "sl": "05",
+      "examName": "CPA",
+      "board": "ICTC",
+      "year": "2023",
+      "institute": "ICTC",
+      "fullMarks": "90",
+      "percentage": "72%"
+    },
+    {
+      "sl": "06",
+      "examName": "CFAS",
+      "board": "VCTC",
+      "year": "2022",
+      "institute": "PVCTC",
+      "fullMarks": "88",
+      "percentage": "89%"
+    },
+    {
+      "sl": "07",
+      "examName": "B.A Honours",
+      "board": "NSOU",
+      "year": "2023",
+      "institute": "BR College",
+      "fullMarks": "300",
+      "percentage": "74%"
+    },
+    {
+      "sl": "08",
+      "examName": "BCA",
+      "board": "KNU",
+      "year": "2028",
+      "institute": "-",
+      "fullMarks": "-",
+      "percentage": "Pursuing"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-featured e-commerce website built with HTML, CSS, JavaScript and jQuery with responsive design.",
+      "image": "assets/projects/project1.jpg",
+      "link": "https://github.com/somnath",
+      "technologies": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Interactive task management application with drag-and-drop functionality and local storage integration.",
+      "image": "assets/projects/project2.jpg",
+      "link": "https://github.com/somnath",
+      "technologies": ["JavaScript", "jQuery", "Tailwind"]
+    },
+    {
+      "id": 3,
+      "title": "Portfolio Website",
+      "description": "Modern and responsive portfolio website showcasing projects and skills with smooth animations.",
+      "image": "assets/projects/project3.jpg",
+      "link": "https://github.com/somnath",
+      "technologies": ["HTML", "Tailwind", "Animation"]
+    }
+  ],
+  "theme": {
+    "primaryColor": "#06b6d4",
+    "secondaryColor": "#3b82f6",
+    "backgroundColor": "#111827",
+    "textColor": "#ffffff",
+    "accentColor": "#ec4899"
+  },
+  "seo": {
+    "title": "Somnath Portfolio Website",
+    "description": "Professional portfolio of Somnath Chatterjee - Full Stack Developer and IT Professional",
+    "keywords": "portfolio, developer, IT professional, web development, programming",
+    "author": "Somnath Chatterjee"
+  }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <h1>Image Generator</h1>
+    <p>This page helps generate placeholder images for the portfolio.</p>
+    
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Right-click on each image below</li>
+        <li>Select "Save image as..."</li>
+        <li>Save to the appropriate folder:
+            <ul>
+                <li>Profile image → assets/profile/profile.jpg</li>
+                <li>Project 1 → assets/projects/project1.jpg</li>
+                <li>Project 2 → assets/projects/project2.jpg</li>
+                <li>Project 3 → assets/projects/project3.jpg</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Profile Image (400x400):</h2>
+    <canvas id="profileCanvas" width="400" height="400"></canvas>
+    <p><a href="#" id="downloadProfile">Download Profile Image</a></p>
+
+    <h2>Project 1 (600x400):</h2>
+    <canvas id="project1Canvas" width="600" height="400"></canvas>
+    <p><a href="#" id="downloadProject1">Download Project 1</a></p>
+
+    <h2>Project 2 (600x400):</h2>
+    <canvas id="project2Canvas" width="600" height="400"></canvas>
+    <p><a href="#" id="downloadProject2">Download Project 2</a></p>
+
+    <h2>Project 3 (600x400):</h2>
+    <canvas id="project3Canvas" width="600" height="400"></canvas>
+    <p><a href="#" id="downloadProject3">Download Project 3</a></p>
+
+    <script>
+        // Generate profile image
+        function generateProfileImage() {
+            const canvas = document.getElementById('profileCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 400, 400);
+            gradient.addColorStop(0, '#06b6d4');
+            gradient.addColorStop(1, '#3b82f6');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 400);
+            
+            // Circle
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(200, 200, 180, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Text
+            ctx.fillStyle = '#06b6d4';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SC', 200, 200);
+        }
+
+        // Generate project images
+        function generateProjectImage(canvasId, title, color1, color2) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 600, 400);
+            gradient.addColorStop(0, color1);
+            gradient.addColorStop(1, color2);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 400);
+            
+            // Text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(title, 300, 200);
+        }
+
+        // Download functions
+        function downloadImage(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.download = filename;
+            link.click();
+        }
+
+        // Generate all images
+        generateProfileImage();
+        generateProjectImage('project1Canvas', 'E-Commerce Platform', '#06b6d4', '#3b82f6');
+        generateProjectImage('project2Canvas', 'Task Management App', '#8b5cf6', '#ec4899');
+        generateProjectImage('project3Canvas', 'Portfolio Website', '#f59e0b', '#ef4444');
+
+        // Add download listeners
+        document.getElementById('downloadProfile').addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadImage('profileCanvas', 'profile.jpg');
+        });
+
+        document.getElementById('downloadProject1').addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadImage('project1Canvas', 'project1.jpg');
+        });
+
+        document.getElementById('downloadProject2').addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadImage('project2Canvas', 'project2.jpg');
+        });
+
+        document.getElementById('downloadProject3').addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadImage('project3Canvas', 'project3.jpg');
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f3f4f6;
+        }
+        canvas {
+            border: 2px solid #06b6d4;
+            margin: 20px 0;
+            display: block;
+            border-radius: 8px;
+        }
+        a {
+            color: #06b6d4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
